@@ -1,0 +1,101 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+
+.container-slide,.container-items,.action-button {
+    display: flex;
+}
+
+.container-slide,.container-items,.item,.item img {
+    width: 50vw;
+    height: 50vh;
+}
+
+.container-slide,.container-items,.item img {
+    border-radius: 10px;
+}
+
+.container-slide {
+    justify-content: space-between;
+    margin: 20vh auto;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.61);
+}
+
+.container-items {
+    position: absolute; /*Assim o container items cobre o container e botoes*/
+    overflow: hidden; /*Faz desaparecer o que ta fora do container*/
+}
+
+.item {
+    transition: all .8s;
+}.item:first-child {
+    /*Aplica margin left sempre no primeiro filho, quando a lista atualizar no JS e a primeira imagem for para o fim da lista, vai aplicar margin left na imagem seguinte*/
+    margin-left: -100%;
+}
+
+.action-button {
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /*Coloca os botoes a frente do container-items com position absolute*/
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0.534);
+    font-size: 30px;
+    font-weight: bold;
+    user-select: none;
+}.action-button:hover {
+    color: white;
+    background-color: #00000065;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    transition: all .5s;
+}.act-btn-right:hover {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Responsivo */
+
+@media screen and (max-width:1250px) {
+    .container-slide,.container-items,.item,.item img {
+        width: 70vw;
+        height: 50vh;
+    }
+}
+@media screen and (max-width:875px) {
+    .container-slide,.container-items,.item,.item img {
+        width: 90vw;
+        height: 50vh;
+    }
+    .action-button {
+        width: 45px;
+        font-size: 26px;
+    }
+}
+@media screen and (max-width:678px) {
+    .container-slide,.container-items,.item,.item img {
+        width: 90vw;
+        height: 40vh;
+    }
+    .action-button {
+        width: 35px;
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:520px) {
+    .container-slide,.container-items,.item,.item img {
+        width: 90vw;
+        height: 30vh;
+    }
+    .action-button {
+        width: 35px;
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:390px) {
+    .container-slide,.container-items,.item,.item img {
+        width: 90vw;
+        height: 25vh;
+    }
+    .action-button {
+        width: 30px;
+        font-size: 22px;
+    }
+}
